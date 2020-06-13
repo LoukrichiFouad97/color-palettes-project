@@ -1,3 +1,7 @@
+body {
+	overflow: hidden;
+}
+
 .ColorBox {
 	height: 25%;
 	width: 20%;
@@ -26,6 +30,7 @@
 	text-transform: uppercase;
 	line-height: 30px;
 	font-size: 1rem;
+	cursor: pointer;
 }
 
 .ColorBox:hover .copy-button {
@@ -54,4 +59,60 @@
 	line-height: 30px;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+.ColorBox-overlay {
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+	transition: transform 0.5s ease-in-out;
+	opacity: 0;
+	transform: scale(0.1);
+	border-radius: 50%;
+}
+
+.ColorBox-overlay.show {
+	position: absolute;
+	opacity: 1;
+	transform: scale(50);
+	z-index: 10;
+}
+
+.copy-msg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+	transform: scale(0.1);
+	opacity: 0;
+	color: white;
+}
+
+.copy-msg.show {
+	opacity: 1;
+	transform: scale(1);
+	z-index: 25;
+	transition: all 0.4s 0.3s ease-in-out;
+}
+
+.copy-msg h1 {
+	font-weight: 400;
+	text-shadow: 1px 4px black;
+	background: rgba(255, 255, 255, 0.2);
+	width: 100%;
+	text-align: center;
+	pad: 1rem;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+
+.copy-msg p {
+	font-weight: 100;
+	font-size: 2rem;
 }
