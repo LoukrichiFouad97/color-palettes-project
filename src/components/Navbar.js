@@ -44,6 +44,8 @@ export default class Navbar extends Component {
 							/>
 						</div>
 					</div>
+
+					{/* Color Format Selection */}
 					<div className="select-container">
 						<Select value={format} onChange={this.handleFormatChange}>
 							<MenuItem value="hex">HEX - #ffffff</MenuItem>
@@ -51,6 +53,8 @@ export default class Navbar extends Component {
 							<MenuItem value="rgba">RGBA - rgba(255,255,255,1.0)</MenuItem>
 						</Select>
 					</div>
+
+					{/* Feedback bar*/}
 					<Snackbar
 						anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
 						open={this.state.open}
@@ -76,6 +80,7 @@ export default class Navbar extends Component {
 						}
 					></Snackbar>
 				</header>
+
 			</div>
 		);
 	}
