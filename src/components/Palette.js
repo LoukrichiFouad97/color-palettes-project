@@ -27,9 +27,11 @@ export default class Palette extends Component {
 					background={color[this.state.format]}
 					name={color.name}
 					key={color.id}
+					goHome={this.goHome}
 				/>
 			);
 		});
+
 		return (
 			<div className="Palette">
 				<Navbar
