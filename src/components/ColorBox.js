@@ -19,8 +19,14 @@ class ColorBox extends Component {
 		});
 	};
 
+	goToSingalColor = (e) => {
+		e.stopPropagation();
+		return <div className="singalColor"></div>;
+	};
+
 	render() {
-		const { background, name } = this.props;
+		const { background, name, id, paletteId } = this.props;
+		const url = `/palette/${paletteId}/${id}`;
 		return (
 			<CopyToClipboard text={background} onCopy={this.changeCopyState}>
 				<div className="ColorBox" style={{ background: background }}>
@@ -38,10 +44,8 @@ class ColorBox extends Component {
 						</div>
 						<button className="copy-button">Copy</button>
 					</div>
-					<Link to="/" onClick={(e) => e.stopPropagation}>
-						<span className="see-more" onClick={this.props.goHome}>
-							More
-						</span>
+					<Link to={url} onClick={this.goToSingalColor}>
+						<span className="see-more">More</span>
 					</Link>
 				</div>
 			</CopyToClipboard>
