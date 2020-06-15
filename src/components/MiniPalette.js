@@ -3,8 +3,8 @@ import { withStyles } from "@material-ui/styles";
 
 const myCss = {
 	root: {
-    backgroundColor: "white",
-    border: '1px solid black',
+		backgroundColor: "white",
+		border: "1px solid black",
 		borderRadius: "5px",
 		padding: "0.5rem",
 		position: "relative",
@@ -15,8 +15,6 @@ const myCss = {
 	},
 	colors: {
 		backgroundColor: "#dae1e4",
-		// display: "flex",
-		// flexWrap: "wrap",
 		height: "150px",
 		width: "100%",
 		borderRadius: "5px",
@@ -55,8 +53,9 @@ function MiniPalette(props) {
 			key={clr.name}
 		></div>
 	));
+
 	return (
-		<div className={classes.root}>
+		<div className={classes.root} onClick={props.handleClick}>
 			<div className={classes.colors}>{miniColors}</div>
 			<h5 className={classes.title}>
 				{paletteName}
